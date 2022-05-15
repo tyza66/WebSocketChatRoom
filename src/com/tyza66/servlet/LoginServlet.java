@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 import java.io.IOException;
 
 @WebServlet("/login")
@@ -17,6 +18,7 @@ public class LoginServlet extends HttpServlet {
         String userPwd = request.getParameter("userPwd");
         System.out.println(userName + "," + userPwd);
         HttpSession session = request.getSession();
+        session.setAttribute("loginName",userName);
         System.out.println("sessionId:"+session.getId());
         request.getRequestDispatcher("/jsp/websocketChatRoom.jsp").forward(request,response);
     }
