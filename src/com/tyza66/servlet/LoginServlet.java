@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "LoginServlet")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userName = request.getParameter("userName");
@@ -16,5 +16,6 @@ public class LoginServlet extends HttpServlet {
         System.out.println(userName + "," + userPwd);
         HttpSession session = request.getSession();
         System.out.println("sessionId:"+session.getId());
+        request.getRequestDispatcher("/jsp/websocketChatRoom.jsp").forward(request,response);
     }
 }

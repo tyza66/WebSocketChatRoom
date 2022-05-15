@@ -12,6 +12,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -32,8 +39,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\shun_\Desktop\Project\Public\WebSocketChatRoom\web" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.62">
+    <configuration name="index.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/WebSocketChatRoom_war_exploded/index.jsp">
+      <method v="2" />
+    </configuration>
+    <configuration name="websocketChatRoom.jsp (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/WebSocketChatRoom_war_exploded/jsp/websocketChatRoom.jsp">
+      <method v="2" />
+    </configuration>
+    <configuration name="websocketChatRoom.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/WebSocketChatRoom_war_exploded/WEB-INF/jsp/websocketChatRoom.jsp">
+      <method v="2" />
+    </configuration>
     <configuration name="Tomcat 9.0.62" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.62" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="WebSocketChatRoom:war exploded">
@@ -72,6 +94,13 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.websocketChatRoom.jsp (1)" />
+        <item itemvalue="JavaScript Debug.websocketChatRoom.jsp" />
+        <item itemvalue="JavaScript Debug.index.jsp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -87,6 +116,11 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="运行" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="失败" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -105,7 +139,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652594818046</updated>
-      <workItem from="1652594820767" duration="703000" />
+      <workItem from="1652594820767" duration="2387000" />
     </task>
     <servers />
   </component>
@@ -113,6 +147,74 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1478" height="211" key="GridCell.Tab.0.bottom" timestamp="1652597286964">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1478" height="211" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1652597286964" />
+    <state width="1478" height="211" key="GridCell.Tab.0.center" timestamp="1652597286964">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1478" height="211" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1652597286964" />
+    <state width="1478" height="211" key="GridCell.Tab.0.left" timestamp="1652597286964">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1478" height="211" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1652597286964" />
+    <state width="1478" height="211" key="GridCell.Tab.0.right" timestamp="1652597286964">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1478" height="211" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1652597286964" />
+    <state width="1478" height="211" key="GridCell.Tab.1.bottom" timestamp="1652597286965">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1478" height="211" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1652597286965" />
+    <state width="1478" height="211" key="GridCell.Tab.1.center" timestamp="1652597286964">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1478" height="211" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1652597286964" />
+    <state width="1478" height="211" key="GridCell.Tab.1.left" timestamp="1652597286964">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1478" height="211" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1652597286964" />
+    <state width="1478" height="211" key="GridCell.Tab.1.right" timestamp="1652597286964">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1478" height="211" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1652597286964" />
+    <state width="1478" height="211" key="GridCell.Tab.2.bottom" timestamp="1652597286965">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1478" height="211" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1652597286965" />
+    <state width="1478" height="211" key="GridCell.Tab.2.center" timestamp="1652597286965">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1478" height="211" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1652597286965" />
+    <state width="1478" height="211" key="GridCell.Tab.2.left" timestamp="1652597286965">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1478" height="211" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1652597286965" />
+    <state width="1478" height="211" key="GridCell.Tab.2.right" timestamp="1652597286965">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1478" height="211" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1652597286965" />
+    <state width="1014" height="211" key="GridCell.Tab.3.bottom" timestamp="1652596347841">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1014" height="211" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1652596347841" />
+    <state width="1014" height="211" key="GridCell.Tab.3.center" timestamp="1652596347841">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1014" height="211" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1652596347841" />
+    <state width="1014" height="211" key="GridCell.Tab.3.left" timestamp="1652596347841">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1014" height="211" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1652596347841" />
+    <state width="1014" height="211" key="GridCell.Tab.3.right" timestamp="1652596347841">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1014" height="211" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1652596347841" />
+    <state x="0" y="149" key="SettingsEditor" timestamp="1652596561510">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="0" y="149" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1652596561510" />
     <state x="0" y="513" key="com.intellij.ide.util.TipDialog" timestamp="1652594827604">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
