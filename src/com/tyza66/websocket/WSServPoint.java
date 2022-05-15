@@ -12,6 +12,7 @@ import java.util.*;
 @ServerEndpoint(value = "/chatroom")
 public class WSServPoint {
     static Set<Session> set = new HashSet<>();
+    static List<String> userList = new ArrayList<String>();
     Map<String, String> map;
     private Msg ms;
 
@@ -32,30 +33,52 @@ public class WSServPoint {
             String[] strs = msg.split("=");
             map.put(strs[0], strs[1]);
         }
+        userList.add(map.get("loginName"));
         System.out.println("map:" + map);
         ms = new Msg();
-        ms.setMsgSender(map.get("loginName"));
+        ms.setType("s");
         ms.setMsgDate(new Date());
+        ms.setMsgSender("system");
+        ms.setUserList(userList);
+        ms.setMsgInfo(map.get("loginName") + "已上线！");
+        String jsonstr = JSONObject.toJSONString(ms);
         set.add(session);
+        bordcast(set, jsonstr);
     }
 
     @OnClose
-    public void onClose() {
+    public void onClose(Session session) {
         System.out.println("连接已关闭！");
+        userList.remove(map.get("loginName"));
+        ms = new Msg();
+        ms.setType("s");
+        ms.setMsgDate(new Date());
+        ms.setMsgSender("system");
+        ms.setUserList(userList);
+        ms.setMsgInfo(map.get("loginName") + "已下线！");
+        String jsonstr = JSONObject.toJSONString(ms);
+        set.remove(session);
+        bordcast(set, jsonstr);
     }
 
     @OnMessage
     public void onMessage(String message) {
         System.out.println("信息接收！" + message);
+        //ms.setMsgInfo(message);
+        //String jsonstr = JSONObject.toJSONString(ms);
+        ms = new Msg();
+        ms.setType("p");
+        ms.setMsgDate(new Date());
+        ms.setMsgSender(map.get("loginName"));
         ms.setMsgInfo(message);
-        String jsonstr =JSONObject.toJSONString(ms);
+        String jsonstr = JSONObject.toJSONString(ms);
         bordcast(set, jsonstr);
         //session.getAsyncRemote().sendText(message);
     }
 
     @OnError
     public void onError(Throwable t) throws Throwable {
-        System.out.println("系统异常！msg:"+t);
+        System.out.println("系统异常！msg:" + t);
     }
 
     public void bordcast(Set<Session> set, String message) {
