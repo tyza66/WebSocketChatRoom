@@ -11,8 +11,13 @@ import java.util.*;
 
 @ServerEndpoint(value = "/chatroom")
 public class WSServPoint {
+    //set是群发的时候用的列表
     static Set<Session> set = new HashSet<>();
+    //userlist是用于构建输出在用户列表的Msg对象用到的参数
     static List<String> userList = new ArrayList<String>();
+    //us是用于私聊模式使用的
+    static Map<Session, String> us = new HashMap<Session, String>();
+    //map存的是传入的session键值对
     Map<String, String> map;
     private Msg ms;
 
@@ -43,6 +48,7 @@ public class WSServPoint {
         ms.setMsgInfo(map.get("loginName") + "已上线！");
         String jsonstr = JSONObject.toJSONString(ms);
         set.add(session);
+        us.put(session, map.get("loginName"));
         bordcast(set, jsonstr);
     }
 
