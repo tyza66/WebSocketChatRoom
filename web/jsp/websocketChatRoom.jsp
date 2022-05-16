@@ -9,6 +9,7 @@
             <script type="text/javascript">
                 var ws;
                 var ws_url = "ws://localhost:8080/WebSocketChatRoom_war_exploded/chatroom";
+                var picp = "";
                 $(function () {
                     ws_connect();
                     $("#send").click(function () {
@@ -50,16 +51,21 @@
                                     userHtml = userHtml + userList[i] + "<br/>"
                                 }
                                 $("#userList").html(userHtml);
-                            } else {
+                            } else if (obj.type == "p") {
                                 $("#record").append("<div style=\"color:green;\">" + obj.msgSender + "&nbsp;" + obj.msgDateStr + "</div><div>" + obj.msgInfo + "</div>");
+                            } else if (obj.type == "img") {
+                                picp = ("<div style=\"color:green;\">" + obj.msgSender + "&nbsp;" + obj.msgDateStr + "</div>");
+                            } else {
+
                             }
                         } else {
                             var reader = new FileReader();
                             reader.readAsDataURL(message.data);
-                            reader.onload = function(evt){
-                                if(evt.target.readyState==FileReader.DONE){
+                            reader.onload = function (evt) {
+                                if (evt.target.readyState == FileReader.DONE) {
                                     var url = evt.target.result;
-                                    $("#record").append("<div><img src='"+url+"' style='max-height:150px;max-width:150px;vertical-align:middle;align:middle;' /></div>");
+                                    console.log(picp);
+                                    $("#record").append(picp + "<div><img src='" + url + "' style='max-height:150px;max-width:150px;vertical-align:middle;align:middle;' /></div>");
                                 }
                             }
                         }

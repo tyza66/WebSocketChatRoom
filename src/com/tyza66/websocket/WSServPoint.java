@@ -7,6 +7,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.nio.ByteBuffer;
@@ -25,7 +26,7 @@ public class WSServPoint {
     private Msg ms;
 
     @OnOpen
-    public void onOpen(Session session) throws UnsupportedEncodingException {
+    public void onOpen(Session session) throws IOException {
         System.out.println("连接创建成功！");
         String msg = session.getQueryString();
         msg = URLDecoder.decode(msg, "utf-8");
@@ -57,7 +58,7 @@ public class WSServPoint {
     }
 
     @OnClose
-    public void onClose(Session session) {
+    public void onClose(Session session) throws IOException {
         System.out.println("连接已关闭！");
         //userList.remove(map.get("loginName"));
         us.remove(session);
@@ -73,7 +74,7 @@ public class WSServPoint {
     }
 
     @OnMessage
-    public void onMessage(String message, Session session) {
+    public void onMessage(String message, Session session) throws IOException {
         System.out.println("信息接收！" + message);
         ms = new Msg();
         ms.setType("p");
@@ -108,17 +109,25 @@ public class WSServPoint {
     }
 
     byte[] bc = null;
+
     @OnMessage
-    public void onMessage(byte[] input, Session session, boolean flag) {
+    public void onMessage(byte[] input, Session session, boolean flag) throws IOException {
         if (!flag) {
             //System.out.println(input.length + "||" + flag);
-            bc =  ArrayUtils.addAll(bc,input);
+            bc = ArrayUtils.addAll(bc, input);
         } else {
             //System.out.println(input.length + "||" + flag + "%%%%");
-            bc =  ArrayUtils.addAll(bc,input);
+            bc = ArrayUtils.addAll(bc, input);
             ByteBuffer bb = ByteBuffer.wrap(bc);
-            bordcast(us.keySet(),bb);
+            bordcast(us.keySet(), bb);
             bc = null;
+            ms = new Msg();
+            ms.setMsgSender(map.get("loginName"));
+            ms.setMsgDate(new Date());
+            ms.setType("img");
+            String jsonstr = JSONObject.toJSONString(ms);
+            System.out.println(123);
+            bordcast(us.keySet(), jsonstr);
         }
     }
 
@@ -127,15 +136,15 @@ public class WSServPoint {
         System.out.println("系统异常！msg:" + t);
     }
 
-    public void bordcast(Set<Session> set, String message) {
+    public void bordcast(Set<Session> set, String message) throws IOException {
         for (Session s : set) {
-            s.getAsyncRemote().sendText(message);
+            s.getBasicRemote().sendText(message);
         }
     }
 
-    public void bordcast(Set<Session> set, ByteBuffer bb) {
+    public void bordcast(Set<Session> set, ByteBuffer bb) throws IOException {
         for (Session s : set) {
-            s.getAsyncRemote().sendBinary(bb);
+            s.getBasicRemote().sendBinary(bb);
         }
     }
 }
