@@ -165,7 +165,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652594818046</updated>
-      <workItem from="1652594820767" duration="33447000" />
+      <workItem from="1652594820767" duration="34307000" />
     </task>
     <servers />
   </component>
@@ -281,11 +281,6 @@
           <url>file://$PROJECT_DIR$/src/com/tyza66/servlet/LoginServlet.java</url>
           <line>14</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/web/jsp/websocketChatRoom.jsp</url>
-          <line>12</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

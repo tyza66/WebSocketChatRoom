@@ -79,9 +79,12 @@
                 }
 
                 function ws_sendMsg() {
-                    var msg = $("#msg").val();
-                    ws.send(msg);
-                    $("#msg").val("");
+                    if ($("#msg").val() != "") {
+                        var msg = $("#msg").val();
+                        ws.send(msg);
+                        $("#msg").val("");
+                    }
+
                 }
 
                 function ws_sendImg() {
@@ -172,18 +175,18 @@
                             <div class="well" id="chat">
                                 <div class="cau">
                                     <div class="chatroom">
-                                        <h4 style="display:block;">聊天信息</h4><br/>
+                                        <h4 style="display:block;">聊天信息</h4>
                                         <div>
-                                        <table id="tbRecord" style="display:block;">
-                                            <tbody id="record"
-                                                style="display:block;height:300px; width:600px; overflow:auto;border: #000000 solid 1px;border-radius: 5px;" />
-                                        </table></div>
+                                            <table id="tbRecord" style="display:block;">
+                                                <tbody id="record"
+                                                    style="display:block;height:300px; width:600px; overflow:auto;border: #000000 solid 1px;border-radius: 5px;" />
+                                            </table>
+                                        </div>
                                     </div>
                                     <div class="userlist">
-                                        <h4 style="display:block;">用户信息</h4><br/>
+                                        <h4 style="display:block;">用户信息</h4>
                                         <table id="tbuserList" style="display:block;">
-                                            <tbody id="userList"
-                                                style="display:block; height:300px;overflow:auto;" />
+                                            <tbody id="userList" style="display:block; height:300px;overflow:auto;" />
                                         </table>
                                     </div>
                                 </div>
