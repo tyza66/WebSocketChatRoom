@@ -8,7 +8,7 @@
 ##### 快速运行
 - 使用IDEA导入项目
 - 确保基本环境允许
-- 修改"web\jsp\websocketChatRoom.jsp"中的ws_url使得websocket网络连通
+- 修改"web/jsp/websocketChatRoom.jsp"中的ws_url使得websocket网络连通
 - 点击运行按钮，会弹出主页
 - 本地访问：http://localhost:8080/WebSocketChatRoom_war_exploded/login
 - （或自己编译war包等方式运行）

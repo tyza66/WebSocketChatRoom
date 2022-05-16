@@ -44,7 +44,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -150,7 +150,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652594818046</updated>
-      <workItem from="1652594820767" duration="27287000" />
+      <workItem from="1652594820767" duration="28367000" />
     </task>
     <servers />
   </component>
@@ -174,10 +174,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="288" y="280" width="1045" height="593" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1652609797801" />
-    <state x="718" y="201" key="FileChooserDialogImpl" timestamp="1652609201154">
+    <state x="718" y="201" key="FileChooserDialogImpl" timestamp="1652679128930">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="718" y="201" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1652609201154" />
+    <state x="718" y="201" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1652679128930" />
     <state width="1187" height="211" key="GridCell.Tab.0.bottom" timestamp="1652678230907">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -242,10 +242,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1014" height="211" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1652596347841" />
-    <state x="418" y="14" key="SettingsEditor" timestamp="1652609204328">
+    <state x="418" y="14" key="SettingsEditor" timestamp="1652679590977">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="418" y="14" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1652609204328" />
+    <state x="418" y="14" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1652679590977" />
     <state x="0" y="513" key="com.intellij.ide.util.TipDialog" timestamp="1652594827604">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
