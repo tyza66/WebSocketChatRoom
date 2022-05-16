@@ -8,7 +8,8 @@
             <script type="text/javascript" src="js/jquery-1.4.3.js"></script>
             <script type="text/javascript">
                 var ws;
-                var ws_url = "ws://localhost:8080/WebSocketChatRoom_war_exploded/chatroom";
+                //这里修改外网ip或服务器地址 tyza66
+                var ws_url = "ws://10.45.179.10:8080/WebSocketChatRoom_war_exploded/chatroom";
                 var picp = "";
                 $(function () {
                     ws_connect();
