@@ -4,7 +4,10 @@
         <html>
 
         <head>
-            <title>聊天窗口【${sessionScope.loginName}】</title>
+            <link rel="stylesheet" href="css/chat.css" />
+            <link rel="stylesheet" href="css/bootstrap.min.css" />
+            <title>【${sessionScope.loginName}】的聊天页面</title>
+            <link rel="icon" href="favicon.ico" type="image/x-icon">
             <script type="text/javascript" src="js/jquery-1.4.3.js"></script>
             <script type="text/javascript">
                 var ws;
@@ -46,7 +49,7 @@
                             var receiveMsg = message.data;
                             var obj = JSON.parse(receiveMsg);
                             if (obj.type == "s") {
-                                $("#record").append("<div style=\"color:pink;\">" + obj.msgSender + ":" + obj.msgInfo + "</div>");
+                                $("#record").append("<div style=\"color:red;\">" + obj.msgSender + ":" + obj.msgInfo + "</div>");
                                 var userHtml = "";
                                 var userList = obj.userList;
                                 for (var i = 0; i < userList.length; i++) {
@@ -99,6 +102,7 @@
         </head>
 
         <body>
+            <!--
             ********************【${sessionScope.loginName}】的聊天窗口******************************
             <table style="border: 1px solid #00F;">
                 <tbody>
@@ -142,6 +146,72 @@
                     </tr>
                 </tfoot>
             </table>
+        -->
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark" id="fix">
+                <div class="container">
+                    <a href="#" class="navbar-brand">聊天</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                        <span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navmenu">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <div class="nav-link" id="github">Github</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div id="bg">
+                <div class="bg-contect"></div>
+                <div class="container">
+                    <div class="alert alert-success text-center" role="alert">
+                        <h5 style="display: inline;">${sessionScope.loginName}</h5>的聊天界面，By：tyza66
+                    </div>
+                    <div class="panel panel-default" style="border-radius:5px;background: rgba(255, 255, 255, 0.3);">
+                        <div class="panel-body">
+                            <div class="well" id="chat">
+                                <div class="cau">
+                                    <div class="chatroom">
+                                        <h4 style="display:block;">聊天信息</h4><br/>
+                                        <div>
+                                        <table id="tbRecord" style="display:block;">
+                                            <tbody id="record"
+                                                style="display:block;height:300px; width:600px; overflow:auto;border: #000000 solid 1px;border-radius: 5px;" />
+                                        </table></div>
+                                    </div>
+                                    <div class="userlist">
+                                        <h4 style="display:block;">用户信息</h4><br/>
+                                        <table id="tbuserList" style="display:block;">
+                                            <tbody id="userList"
+                                                style="display:block; height:300px;overflow:auto;" />
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="sub">
+                                    <div class="sender">
+                                        <tr>
+                                            <td colspan="2" align="center">
+                                                <input id="msg" name="msg" style="width:100%;" placeholder="信息输入" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" align="center">
+                                                <button style="margin:0 30px 0 30px" id="send" name="send">发送</button>
+                                                <input type="file" id="img" style="width:200px; height:30px" />
+                                                <button id="uploadImg" name="uploadImg">上传图片</button>
+                                                <button style="margin:0 30px 0 30px" id="disconnect"
+                                                    name="disconnect">断开连接</button>
+                                            </td>
+                                        </tr>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="js/bootstrap.bundle.min.js"></script>
+            <script src="js/index_main.js"></script>
         </body>
 
         </html>
