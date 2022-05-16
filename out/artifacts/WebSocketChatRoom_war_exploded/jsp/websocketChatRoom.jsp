@@ -179,7 +179,7 @@
                                         <div>
                                             <table id="tbRecord" style="display:block;">
                                                 <tbody id="record"
-                                                    style="display:block;height:300px; width:600px; overflow:auto;border: #000000 solid 1px;border-radius: 5px;" />
+                                                    style="display:block;height:300px; width:60vw; overflow:auto;border: #000000 solid 1px;border-radius: 5px;" />
                                             </table>
                                         </div>
                                     </div>
