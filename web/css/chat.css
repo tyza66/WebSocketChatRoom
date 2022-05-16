@@ -97,4 +97,9 @@ p {
     height: 90%;
     background-color:white ;
     border-radius:5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1%;
 }

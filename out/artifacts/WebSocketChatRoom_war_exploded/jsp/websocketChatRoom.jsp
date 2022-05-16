@@ -192,29 +192,35 @@
                                 </div>
                                 <div class="sub">
                                     <div class="sender">
-                                        <tr>
-                                            <td colspan="2" align="center">
-                                                <input id="msg" name="msg" style="width:100%;" placeholder="信息输入" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2" align="center">
-                                                <button style="margin:0 30px 0 30px" id="send" name="send">发送</button>
-                                                <input type="file" id="img" style="width:200px; height:30px" />
-                                                <button id="uploadImg" name="uploadImg">上传图片</button>
-                                                <button style="margin:0 30px 0 30px" id="disconnect"
-                                                    name="disconnect">断开连接</button>
-                                            </td>
-                                        </tr>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="msg" name="msg"
+                                                style="height: 50px;margin-top:5px" placeholder="信息输入"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                        <center>
+                                            <div class="btn-group btn-group-justified" role="group" aria-label="..." style="margin-top: 5px;">
+                                                <div class="btn-group" role="group">
+                                                    <button type="button" class="btn btn-default" id="send" name="send"
+                                                        style="background-color:rgb(204, 122, 122);border: red solid 2px;">发送</button>
+                                                </div>
+                                                <div class="btn-group" role="group">
+                                                    <input type="file" class="btn btn-default" id="img"
+                                                        style="background-color:rgb(154, 210, 154);border: green solid 2px;" />
+                                                </div>
+                                                <div class="btn-group" role="group">
+                                                    <button type="button" class="btn btn-default" id="uploadImg"
+                                                        name="uploadImg"
+                                                        style="background-color:rgb(154, 210, 154);border: green solid 2px;">发送图片</button>
+                                                </div>
+                                            </div>
+                                        </center>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <script src="js/bootstrap.bundle.min.js"></script>
-            <script src="js/index_main.js"></script>
+                <script src="js/index_main.js"></script>
         </body>
 
         </html>
