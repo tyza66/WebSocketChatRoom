@@ -40,11 +40,11 @@
                         var receiveMsg = message.data;
                         var obj = JSON.parse(receiveMsg);
                         if(obj.type == "s"){
-                            $("#record").append("<div>"+ obj.msgSender +":"+ obj.msgInfo + "</div>");
+                            $("#record").append("<div style=\"color:pink;\">"+ obj.msgSender +":"+ obj.msgInfo + "</div>");
                             var userHtml = "";
                             var userList = obj.userList;
                             for(var i=0;i<userList.length;i++){
-                                userHtml = userHtml + userList[i] + "<br/><br/>"
+                                userHtml = userHtml + userList[i] + "<br/>"
                             }
                             $("#userList").html(userHtml);
                         }else{
