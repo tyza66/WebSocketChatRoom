@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: larger;
+    color: whitesmoke;
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+}
+
+#fix{
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+}
+
+.bg-contect{
+    height: 4rem;
+}
+
+#bg {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/bj.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#login{
+    width: 380px;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-top: 100px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#loginin{
+    width: 350px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
