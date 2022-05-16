@@ -4,6 +4,7 @@
 - 实现技术：servlet，jsp，websocket，bootstrap
 - 实现功能：用户群聊天，用户互相@私聊，用户发送图片
 - 资料地址:https://www.bilibili.com/video/BV1HK4y1g7gn
+- 通过"@用户名:"可以进行私聊
 
 ##### 快速运行
 - 使用IDEA导入项目
