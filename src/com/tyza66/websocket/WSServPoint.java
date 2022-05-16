@@ -1,12 +1,15 @@
 package com.tyza66.websocket;
 
 import com.alibaba.fastjson.JSONObject;
+import com.sun.deploy.util.ArrayUtil;
 import com.tyza66.pojo.Msg;
+import org.apache.commons.lang3.ArrayUtils;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.nio.ByteBuffer;
 import java.util.*;
 
 @ServerEndpoint(value = "/chatroom")
@@ -104,6 +107,21 @@ public class WSServPoint {
         }
     }
 
+    byte[] bc = null;
+    @OnMessage
+    public void onMessage(byte[] input, Session session, boolean flag) {
+        if (!flag) {
+            //System.out.println(input.length + "||" + flag);
+            bc =  ArrayUtils.addAll(bc,input);
+        } else {
+            //System.out.println(input.length + "||" + flag + "%%%%");
+            bc =  ArrayUtils.addAll(bc,input);
+            ByteBuffer bb = ByteBuffer.wrap(bc);
+            bordcast(us.keySet(),bb);
+            bc = null;
+        }
+    }
+
     @OnError
     public void onError(Throwable t) throws Throwable {
         System.out.println("系统异常！msg:" + t);
@@ -112,6 +130,12 @@ public class WSServPoint {
     public void bordcast(Set<Session> set, String message) {
         for (Session s : set) {
             s.getAsyncRemote().sendText(message);
+        }
+    }
+
+    public void bordcast(Set<Session> set, ByteBuffer bb) {
+        for (Session s : set) {
+            s.getAsyncRemote().sendBinary(bb);
         }
     }
 }

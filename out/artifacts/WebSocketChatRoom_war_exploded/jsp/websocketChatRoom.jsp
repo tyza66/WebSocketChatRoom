@@ -14,6 +14,9 @@
                     $("#send").click(function () {
                         ws_sendMsg();
                     });
+                    $("#uploadImg").click(function () {
+                        ws_sendImg();
+                    });
                 });
 
                 function ws_connect() {
@@ -36,20 +39,31 @@
                     };
 
                     ws.onmessage = function (message) {
-                        console.log(message.data);
-                        var receiveMsg = message.data;
-                        var obj = JSON.parse(receiveMsg);
-                        if(obj.type == "s"){
-                            $("#record").append("<div style=\"color:pink;\">"+ obj.msgSender +":"+ obj.msgInfo + "</div>");
-                            var userHtml = "";
-                            var userList = obj.userList;
-                            for(var i=0;i<userList.length;i++){
-                                userHtml = userHtml + userList[i] + "<br/>"
+                        if ("string" == typeof (message.data)) {
+                            var receiveMsg = message.data;
+                            var obj = JSON.parse(receiveMsg);
+                            if (obj.type == "s") {
+                                $("#record").append("<div style=\"color:pink;\">" + obj.msgSender + ":" + obj.msgInfo + "</div>");
+                                var userHtml = "";
+                                var userList = obj.userList;
+                                for (var i = 0; i < userList.length; i++) {
+                                    userHtml = userHtml + userList[i] + "<br/>"
+                                }
+                                $("#userList").html(userHtml);
+                            } else {
+                                $("#record").append("<div style=\"color:green;\">" + obj.msgSender + "&nbsp;" + obj.msgDateStr + "</div><div>" + obj.msgInfo + "</div>");
                             }
-                            $("#userList").html(userHtml);
-                        }else{
-                            $("#record").append("<div style=\"color:green;\">" + obj.msgSender + "&nbsp;" + obj.msgDateStr + "</div><div>" + obj.msgInfo + "</div>");
+                        } else {
+                            var reader = new FileReader();
+                            reader.readAsDataURL(message.data);
+                            reader.onload = function(evt){
+                                if(evt.target.readyState==FileReader.DONE){
+                                    var url = evt.target.result;
+                                    $("#record").append("<div><img src='"+url+"' style='max-height:150px;max-width:150px;' /></div>");
+                                }
+                            }
                         }
+                        console.log(message.data);
                     };
                 }
 
@@ -60,7 +74,19 @@
                 }
 
                 function ws_sendImg() {
-                }
+                    //图片上传
+                    var fObj = $("#img")[0].files[0];
+                    if (fObj) {
+                        var reader = new FileReader();
+                        reader.readAsArrayBuffer(fObj);
+                        reader.onload = function (evt) {
+                            ws.send(evt.target.result);
+                        }
+                        $("#img").val("");
+                    } else {
+                        $("#img").val("");
+                    }
+                };
             </script>
         </head>
 
